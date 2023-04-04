@@ -1,5 +1,4 @@
 # Lab04 dictionarys
-
 print("Declarations")
 print("1---")
 s = {}
