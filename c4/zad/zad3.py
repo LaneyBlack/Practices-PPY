@@ -38,7 +38,7 @@ while playing:
     userPlaying = len(guessedCharacters) % 2 + 1  # 1 if user 1 and 2 if user 2
     while True:
         letter = input("User " + str(userPlaying) + " guesses a character: ").lower()[0] #get letter from user
-        if 'z' <= letter <= 'a': # check letter ASCII
+        if 'z' < letter < 'a': # check letter ASCII
             print("This is not a letter! Try again")
             continue
         if letter not in guessedCharacters: # if letter was not used
