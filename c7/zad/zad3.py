@@ -10,7 +10,7 @@ class Person:
 
     def show_info(self):
         print(self.__dict__)
-        #jest tam napisane w postaci krotki, listy lub slownika wiec wybralem slownik
+        # jest tam napisane w postaci krotki, listy lub slownika wiec wybralem slownik
 
     @staticmethod
     def show_persons():
