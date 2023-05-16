@@ -1,0 +1,14 @@
+First Line - mode (delete, create)
+Second Line - Path to working directory (C:\PJATK\4th\PPY\c9\test)
+Third Line - File structure to build in which
+    symbols - mean file name
+    { - means go inside created directory
+    } - means go outside created directory
+    , - means create another directory in the same place
+Also the configuration file must be named configuration.txt
+    and be placed right next to this script
+
+Example:
+delete
+C:\PJATK\4th\PPY\c9\test
+directory1{dict2,play{qwe,wet},meme{lmao}}

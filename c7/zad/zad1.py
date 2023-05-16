@@ -3,6 +3,7 @@ class Product:
         self.name = name
         self.date = date
         self.price = price
+        self.producer = producer
         self.type = type
 
     def __str__(self):

@@ -1,0 +1,4 @@
+Cucumber, 4.3, CareForEco, 10.03, Vegetable
+Chicken Meat, 12.4, WMK, 04.03, Meat
+Water, 4.30, Borjomi, 27.02, Drink
+Banana,2.09,Spain,12.02,Fruit

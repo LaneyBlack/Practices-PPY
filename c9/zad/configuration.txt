@@ -1,0 +1,3 @@
+delete
+C:\PJATK\4th\PPY\c9\test
+directory1{dict2,play{qwe,wet},meme{lmao}}

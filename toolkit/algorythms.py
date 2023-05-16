@@ -15,7 +15,6 @@ def checkForPerfectNumber(*nums):
                 result[num] = False
     return result
 
-
 def getCatalanNumbers(upto, even=None):
     result = []
     prevNumber = 1
@@ -35,7 +34,6 @@ def getCatalanNumbers(upto, even=None):
         elif not even and catNum % 2 == 1:
             result.append(catNum)
     return result
-
 
 def getPrimeNumbers(upto=100):
     numbers = {i: True for i in range(upto + 1)}
