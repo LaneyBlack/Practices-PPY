@@ -1,5 +1,5 @@
 # Ex1 - 4pkt
-def iflower_print(a, b, symbol):
+def if_lower_print(a, b, symbol):
     if (a < b):
         print(symbol, end="\t")
     else:
@@ -8,7 +8,7 @@ def iflower_print(a, b, symbol):
 
 a, b, c = [int(x) for x in input("Please provide 3 whole numbers: ").split()]
 for i in range(max(a, b, c)):
-    iflower_print(i, a, "*")
-    iflower_print(i, b, "#")
-    iflower_print(i, c, "$")
+    if_lower_print(i, a, "*")
+    if_lower_print(i, b, "#")
+    if_lower_print(i, c, "$")
     print()

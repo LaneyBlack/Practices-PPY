@@ -3,14 +3,14 @@ from list2.Calculator import Calculator
 
 calc = Calculator()
 print("Welcome to calculator (exit to stop):")
-while (True):
+while True:
     inp = input("Action: ").strip().split()
     if inp[0] == "exit":
         break
     if inp[0] == "help":
         calc.print_help()
         continue
-    if (len(inp) != 3):
+    if len(inp) != 3:
         print("Wrong input!")
         print("User command 'help' to see the correct input format")
         continue
