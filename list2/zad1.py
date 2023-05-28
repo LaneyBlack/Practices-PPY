@@ -1,6 +1,6 @@
 # Ex1 - 4pkt
 def if_lower_print(a, b, symbol):
-    if (a < b):
+    if a < b:
         print(symbol, end="\t")
     else:
         print(" ", end="\t")

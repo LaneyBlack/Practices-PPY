@@ -33,7 +33,7 @@ class CircleCrossGame:
             if self.field[i] != 0 and self.field[i] == self.field[i + 1] and self.field[i] == self.field[i + 2]:
                 return self.field[i]
         for i in range(3):  # vertical lines check
-            if self.field[i] != 0 and self.field[i] == self.field[i + 3 and self.field[i]] == self.field[i + 6]:
+            if self.field[i] != 0 and self.field[i] == self.field[i + 3] and self.field[i] == self.field[i + 6]:
                 return self.field[i]
         # X lines check
         if self.field[4] != 0:

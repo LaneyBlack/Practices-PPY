@@ -27,7 +27,8 @@ class Calculator:
         return result
 
     def print_history(self):
-        print(*[x for x in self.history],sep=", ")
+        print(*[x for x in self.history], sep=", ")
+
     def print_help(self):
         print("Supported actions: +, -, *, /, // (divide without remainder), %, /^ (sqrt), ^ (power)")
         print("Input format (separated only with spaces!) is: number1 action number2")
