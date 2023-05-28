@@ -39,7 +39,7 @@ class Token:
             character_code = ord(token[i])
             if character_code - secret[secret_index] < 0:
                 character_code += 126
-            character_code-=secret[secret_index]
+            character_code -= secret[secret_index]
             result += chr(character_code)
             secret_index += 1
         return result
@@ -61,20 +61,18 @@ class User:
         self.email = email
 
 
-# Change this to test the algorythm
-token_date_expire = "05-28-23 21:39:00"
-
 
 def main():
-    user = User("Jan", "Kowalski", "kowalski@gmail.com")
-    token = Token.create_token(user, datetime.strptime(token_date_expire, "%m-%d-%y %H:%M:%S"), user.secret)
+    info = input("Please provide user data to make a token(name, surname, e-mail, expire date (%m-%d-%y %H:%M:%S)): ").strip().split(",")
+    user = User(info[0], info[1], info[2])
+    token = Token.create_token(user, datetime.strptime(info[3].strip(), "%m-%d-%y %H:%M:%S"), user.secret)
     Token.print_token(token)
     while True:
         user_input = input("Do you want to exit (type 'exit') or login (type 'login'): ").strip()
         if user_input == "login":
             data = Token.translate(token, user.secret)
             values = data.split(Token.splitter)
-            exp_date = datetime.strptime(values[3], "%m-%d-%y %H:%M:%S")
+            exp_date = datetime.strptime(values[3].strip(), "%m-%d-%y %H:%M:%S")
             if exp_date > datetime.now():
                 print("User login success!")
                 print("Data: ", values[0], values[1], values[2])
