@@ -61,21 +61,26 @@ class User:
         self.email = email
 
 
-
 def main():
-    info = input("Please provide user data to make a token(name, surname, e-mail, expire date (%m-%d-%y %H:%M:%S)): ").strip().split(",")
-    user = User(info[0], info[1], info[2])
-    token = Token.create_token(user, datetime.strptime(info[3].strip(), "%m-%d-%y %H:%M:%S"), user.secret)
+    user_input = input(
+        "Please provide user data to make a token(name, surname, e-mail, expire date (%m-%d-%y %H:%M:%S)): ") \
+        .strip().split(",")
+    user = User(user_input[0], user_input[1], user_input[2])
+    token = Token.create_token(user, datetime.strptime(user_input[3].strip(), "%m-%d-%y %H:%M:%S"), user.secret)
     Token.print_token(token)
     while True:
         user_input = input("Do you want to exit (type 'exit') or login (type 'login'): ").strip()
         if user_input == "login":
-            data = Token.translate(token, user.secret)
+            user_input = input("Please provide your token: ")
+            data = Token.translate(user_input.strip(), user.secret)
             values = data.split(Token.splitter)
             exp_date = datetime.strptime(values[3].strip(), "%m-%d-%y %H:%M:%S")
             if exp_date > datetime.now():
                 print("User login success!")
                 print("Data: ", values[0], values[1], values[2])
+                user_input = input("Do you want to check expire date(y/n)? ").strip()
+                if user_input == "y":
+                    print("Expire date is " + values[3])
             else:
                 print("User login problem!")
                 print("Token has expired")
